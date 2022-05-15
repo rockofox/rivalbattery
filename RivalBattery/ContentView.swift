@@ -15,8 +15,10 @@ struct ContentView: View {
             
             if let output = String(data: data, encoding: String.Encoding.utf8) {
                 let charging = !output.contains("Discharging")
-                let i = output.components(separatedBy: "]")[1].components(separatedBy: " %")[0].replacingOccurrences(of: " ", with: "")
-                return (Int(i), charging)
+                if output.contains("]") {
+                    let i = output.components(separatedBy: "]")[1].components(separatedBy: " %")[0].replacingOccurrences(of: " ", with: "")
+                    return (Int(i), charging)
+                }
             }
         } catch {}
         return (nil, false)
@@ -25,12 +27,17 @@ struct ContentView: View {
     var body: some View {
         VStack(alignment: .leading){
             HStack {
-                Label("Aerox 3 Wireless", systemImage: "computermouse")
-                Spacer()
-                Text(String(battery.0 ?? 0) + " %")
-                Image(systemName: "battery.0")
-                if battery.1 {
-                    Image(systemName: "bolt")
+                if battery.0 != nil {
+                    Label("Aerox 3 Wireless", systemImage: "computermouse")
+                    Spacer()
+                    Text(String(battery.0 ?? 0) + " %")
+                    Image(systemName: "battery.0")
+                    if battery.1 {
+                        Image(systemName: "bolt")
+                    }
+                }
+                else {
+                    Text("No supported devices connected")
                 }
             }
         }.frame(width: 320, height: 240, alignment: .topLeading).padding()

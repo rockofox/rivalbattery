@@ -24,6 +24,7 @@ struct ContentView: View {
         return (nil, false)
     }
     @State private var battery: (Int?, Bool) = (nil, false)
+    @State private var showRivalCfgError = true
     var body: some View {
         VStack(alignment: .leading){
             HStack {
@@ -39,9 +40,19 @@ struct ContentView: View {
                 else {
                     Text("No supported devices connected")
                 }
+            }.alert(
+                "RivalCfg not installed", isPresented: $showRivalCfgError
+            ) {
+
+            } message: {
+                Text("Please install it via Homebrew")
             }
         }.frame(width: 320, height: 240, alignment: .topLeading).padding()
             .onAppear {
+                let fileManager = FileManager.default
+                showRivalCfgError = !fileManager.fileExists(atPath: "/opt/homebrew/bin/rivalcfg")
+                
+                
                 battery = getRivalBattery()
                 Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
                     battery = getRivalBattery()

@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0BF1A60228313FF600569D3A /* RivalBatteryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF1A60128313FF600569D3A /* RivalBatteryApp.swift */; };
 		0BF1A60428313FF600569D3A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF1A60328313FF600569D3A /* ContentView.swift */; };
 		0BF1A60628313FF600569D3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BF1A60528313FF600569D3A /* Assets.xcassets */; };
 		0BF1A60928313FF600569D3A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BF1A60828313FF600569D3A /* Preview Assets.xcassets */; };
 		0BF1A61428313FF600569D3A /* RivalBatteryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF1A61328313FF600569D3A /* RivalBatteryTests.swift */; };
 		0BF1A61E28313FF600569D3A /* RivalBatteryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF1A61D28313FF600569D3A /* RivalBatteryUITests.swift */; };
 		0BF1A62028313FF600569D3A /* RivalBatteryUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF1A61F28313FF600569D3A /* RivalBatteryUITestsLaunchTests.swift */; };
+		0BF1A62D2831406100569D3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF1A62C2831406100569D3A /* AppDelegate.swift */; };
+		0BF1A6302831418F00569D3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BF1A62F2831418F00569D3A /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +36,6 @@
 
 /* Begin PBXFileReference section */
 		0BF1A5FE28313FF600569D3A /* RivalBattery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RivalBattery.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		0BF1A60128313FF600569D3A /* RivalBatteryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RivalBatteryApp.swift; sourceTree = "<group>"; };
 		0BF1A60328313FF600569D3A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0BF1A60528313FF600569D3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0BF1A60828313FF600569D3A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -45,6 +45,9 @@
 		0BF1A61928313FF600569D3A /* RivalBatteryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RivalBatteryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BF1A61D28313FF600569D3A /* RivalBatteryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RivalBatteryUITests.swift; sourceTree = "<group>"; };
 		0BF1A61F28313FF600569D3A /* RivalBatteryUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RivalBatteryUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0BF1A62C2831406100569D3A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0BF1A62E2831414500569D3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		0BF1A62F2831418F00569D3A /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,11 +98,13 @@
 		0BF1A60028313FF600569D3A /* RivalBattery */ = {
 			isa = PBXGroup;
 			children = (
-				0BF1A60128313FF600569D3A /* RivalBatteryApp.swift */,
+				0BF1A62E2831414500569D3A /* Info.plist */,
 				0BF1A60328313FF600569D3A /* ContentView.swift */,
+				0BF1A62C2831406100569D3A /* AppDelegate.swift */,
 				0BF1A60528313FF600569D3A /* Assets.xcassets */,
 				0BF1A60A28313FF600569D3A /* RivalBattery.entitlements */,
 				0BF1A60728313FF600569D3A /* Preview Content */,
+				0BF1A62F2831418F00569D3A /* Main.storyboard */,
 			);
 			path = RivalBattery;
 			sourceTree = "<group>";
@@ -235,6 +240,7 @@
 			files = (
 				0BF1A60928313FF600569D3A /* Preview Assets.xcassets in Resources */,
 				0BF1A60628313FF600569D3A /* Assets.xcassets in Resources */,
+				0BF1A6302831418F00569D3A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,7 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BF1A60428313FF600569D3A /* ContentView.swift in Sources */,
-				0BF1A60228313FF600569D3A /* RivalBatteryApp.swift in Sources */,
+				0BF1A62D2831406100569D3A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,11 +430,14 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RivalBattery/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = foxcorp.RivalBattery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -451,11 +460,14 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RivalBattery/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = foxcorp.RivalBattery;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -23,13 +23,32 @@ struct ContentView: View {
         } catch {}
         return (nil, false)
     }
+    func getMouseName() -> String? {
+        let command = Process()
+        command.executableURL = URL(fileURLWithPath: "/bin/sh")
+        command.arguments = ["-c", "/opt/homebrew/bin/rivalcfg --help | grep SteelSeries | sed s/Options://"]
+        
+        let pipe = Pipe()
+        
+        command.standardOutput = pipe
+        do{
+            try command.run()
+            let data = pipe.fileHandleForReading.readDataToEndOfFile()
+            
+            if let output = String(data: data, encoding: String.Encoding.utf8) {
+                return output.replacingOccurrences(of: "\n", with: "")
+            }
+        } catch {}
+        return nil
+    }
     @State private var battery: (Int?, Bool) = (nil, false)
     @State private var showRivalCfgError = true
+    @State private var mouseName: String?
     var body: some View {
         VStack(alignment: .leading){
             HStack {
                 if battery.0 != nil {
-                    Label("Aerox 3 Wireless", systemImage: "computermouse")
+                    Label(mouseName ?? "", systemImage: "computermouse")
                     Spacer()
                     Text(String(battery.0 ?? 0) + " %")
                     Image(systemName: "battery.0")
@@ -51,7 +70,7 @@ struct ContentView: View {
             .onAppear {
                 let fileManager = FileManager.default
                 showRivalCfgError = !fileManager.fileExists(atPath: "/opt/homebrew/bin/rivalcfg")
-                
+                mouseName = getMouseName()
                 
                 battery = getRivalBattery()
                 Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
